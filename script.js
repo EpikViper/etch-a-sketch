@@ -1,7 +1,7 @@
 const docbody = document.body;
 docbody.style.display = 'flex';
+docbody.style.flexDirection = 'column';
 docbody.style.justifyContent = 'center';
-docbody.style.alignItems = 'center';
 docbody.style.flex = '1';
 docbody.style.flexWrap = 'wrap';
 docbody.style.margin = '0px';
@@ -10,12 +10,22 @@ docbody.style.minHeight = '100vh'; // putting this always as tall as the screen.
 const container = document.createElement('div');
 const startingGridnumber = 4;
 
+const restartButton = document.createElement('button');
+restartButton.textContent = 'Restart';
+restartButton.style.backgroundColor = 'red';
+restartButton.style.border = '5px solid black';
+restartButton.style.width = '150px';
+restartButton.style.height = '100px';
+restartButton.style.alignSelf = 'flex-start';
+restartButton.style.marginLeft = '20px';
+
+docbody.appendChild(restartButton);
+
 container.style.display = 'flex';
 container.style.flexDirection = 'column';
 container.style.width = '960px';
 container.style.height = '960px';
 container.style.alignSelf = 'center';
-
 docbody.appendChild(container);
 
 function playGame(number) {
@@ -66,3 +76,15 @@ function playGame(number) {
 }
 
 playGame(startingGridnumber);
+
+restartButton.addEventListener('click', () => {
+    let userChoice;
+
+    do {
+        userChoice = Number(prompt('Choose the number of squares (1-100):'));
+    } while (!Number.isInteger(userChoice) || userChoice < 1 || userChoice > 100);
+
+    // outerDivs = document.querySelector(outerDivs);
+})
+
+
