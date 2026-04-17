@@ -29,10 +29,9 @@ container.style.alignSelf = 'center';
 docbody.appendChild(container);
 
 function playGame(number) {
-    for (let i = 0; i < startingGridnumber; i++) {
-
+    for (let i = 0; i < number; i++) {
         const outerDiv = document.createElement('div');
-        outerDiv.style.border = '5px solid black'
+        outerDiv.style.border = 'solid black'
         outerDiv.className = 'outer-divs';
         outerDiv.style.display = 'flex';
         outerDiv.style.flex = '1';
@@ -43,9 +42,9 @@ function playGame(number) {
     const outerDivs = document.querySelectorAll('.outer-divs');
 
     outerDivs.forEach((div) => {
-        for(let i = 0; i < startingGridnumber; i++) {
+        for(let i = 0; i < number; i++) {
             const childDiv = document.createElement('div');
-            childDiv.style.border = '5px solid black'
+            childDiv.style.border = 'solid black'
             childDiv.className = 'inner-divs';
             childDiv.style.flex = '1';
             div.appendChild(childDiv);
@@ -89,6 +88,8 @@ restartButton.addEventListener('click', () => {
     outerDivs.forEach((div) => {
         div.remove();
     })
+
+    playGame(userChoice);
 })
 
 
