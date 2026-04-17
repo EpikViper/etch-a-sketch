@@ -84,7 +84,11 @@ restartButton.addEventListener('click', () => {
         userChoice = Number(prompt('Choose the number of squares (1-100):'));
     } while (!Number.isInteger(userChoice) || userChoice < 1 || userChoice > 100);
 
-    // outerDivs = document.querySelector(outerDivs);
+    outerDivs = document.querySelectorAll('.outer-divs');
+
+    outerDivs.forEach((div) => {
+        div.remove();
+    })
 })
 
 
